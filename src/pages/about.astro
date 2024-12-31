@@ -1,17 +1,54 @@
 ---
-import Layout from "../layouts/Layout.astro";
----
+const pageTitle = "About Me";
 
-<Layout>
+const identity ={
+  firstName: "Pawel",
+  country: "Poland",
+  occupation: "Web Developer",
+  hobbies: ["Gaming", "Coding", "Learning", "Reading", "Fantasy Books", "Sci-Fi Movies"],
+  
+}
+
+const skills = ["HTML", "CSS", "JavaScript", "Astro", "Tailwind CSS", "React", "MSSQL", "MySQL", "Git", "GitHub", "VS Code"];
+
+const happy = true;
+const finished = false;
+const gols = 3
+---
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{pageTitle}</title>
+</head>
+<body>
   <a href="/">Home</a>
 	<a href="/about">About</a>
   <a href="/blog">Blog</a>
 
-  <h1>My Astro Site</h1>
-  <h1>About Me</h1>
+  <h1>{pageTitle}</h1>
   <h2>... and my new Astro site!</h2>
 
   <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one i build myself!</p>
 
   <p>This site will update as I complete more of tutorial, so keeo checking back and see how my journey is going!</p>
-</Layout>
+
+  <p>Here are a few facts about me:</p>
+  <ul>
+    <li>My name is {identity.firstName}</li>
+    <li>I lice in {identity.country} and I work as a {identity.occupation}.</li>
+    {identity.hobbies.length > 2 && <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}.</li>}
+  </ul>
+
+  <p>My skils are:</p>
+  <ul>
+    {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+
+    {happy && <p>I am happy to be learning Astro!</p>}
+
+    {finished && <p>I finished this tutorial!</p>}
+
+    {gols === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+</body>
+</html>
