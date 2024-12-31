@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/PostLayout.astro"
 title: "My Second Blog Post"
 pubDate: 2024-12-31
 description: "After learing soe Astro, I couldn't stop!."
