@@ -61,6 +61,15 @@ h1 {
   display: unset;
 }
 
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
+
+.dark .nav-links {
+  color: #fff;
+}
+
 @media screen and (min-wdth: 636px) {
   .nav-links {
     margin-left: 5rem;
